@@ -2,8 +2,8 @@ rost::rost! {
     benutze std::sammlungen::Wörterbuch als Wöbu;
 
     eigenschaft SchlüsselWert {
-        funktion schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette);
-        funktion lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette>;
+        fk schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette);
+        fk lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette>;
     }
 
     statisch änd WÖRTERBUCH: Möglichkeit<Wöbu<Zeichenkette, Zeichenkette>> = Nichts;
@@ -12,14 +12,14 @@ rost::rost! {
 
     umstz SchlüsselWert für Konkret {
 
-        funktion schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette) {
+        fk schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette) {
             lass wöbu = gefährlich {
                 WÖRTERBUCH.hole_oder_füge_ein_mit(Standard::standard)
             };
             wöbu.einfügen(schlsl, wert);
         }
 
-        funktion lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette> {
+        fk lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette> {
             wenn lass Etwas(wöbu) = gefährlich { WÖRTERBUCH.als_ref() } {
                 Gut(wöbu.hole(&schlsl))
             } anderenfalls {
@@ -28,7 +28,7 @@ rost::rost! {
         }
     }
 
-    öffentlich(kiste) funktion vielleicht(i: u32) -> Möglichkeit<Ergebnis<u32, Zeichenkette>> {
+    öffentlich(kiste) fk vielleicht(i: u32) -> Möglichkeit<Ergebnis<u32, Zeichenkette>> {
         wenn i % 2 == 1 {
             wenn i == 42 {
                 Etwas(Fehler(Zeichenkette::von("Scheiße")))
@@ -40,14 +40,14 @@ rost::rost! {
         }
     }
 
-    asynchron funktion beispiel() {
+    asynchron fk beispiel() {
     }
 
-    asynchron funktion beispiel2() {
+    asynchron fk beispiel2() {
         beispiel().abwarten;
     }
 
-    funktion einstieg() {
+    fk einstieg() {
         lass änd x = 31;
 
         entspreche x {
@@ -86,4 +86,3 @@ rost::rost! {
             });
     }
 }
-
