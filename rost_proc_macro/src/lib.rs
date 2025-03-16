@@ -39,7 +39,7 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "ea" => "io",
         "extern" => "extern",
         "falsch" => "false",
-        "funktion" => "fn",
+        "funktion" | "fk" => "fn",
         "übergeordnet" | "uebergeordnet" => "super",
         "einfügen" | "einfuegen" => "insert",
 
