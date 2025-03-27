@@ -65,8 +65,8 @@ Poland can into Rust!
 
 ## Współpraca
 
-Przede wszystkim, _dziękuję bardzo_ za rozważenie udziału w tym żarcie,
-polski rząd będzie ci wdzięczny później! Bazujące na niemieckiej wersji, [Shemnei](https://github.com/Shemnei/) i [michidk](https://github.com/michidk/). Vibe-translated przez Claude 3.7.
+Przede wszystkim, dziękuję bardzo za rozważenie udziału w tym żarcie,
+polski rząd będzie ci wdzięczny później! Bazujące na niemieckiej wersji, [Shemnei](https://github.com/Shemnei/) i [michidk](https://github.com/michidk/). Vibe-translated przez [https://p.migdal.pl/](Piotr Migdał) przy użyciu Claude 3.7.
 
 ## Licencja
 
