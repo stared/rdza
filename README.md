@@ -1,13 +1,13 @@
 # rdza
 
-<p align="center"><img src="logo.jpg" alt="Rust Polish Logo"></p>
+<p align="center"><img src="polska_rdza.png" alt="Rust Polish Logo"></p>
 
 Czy nie jesteś _zmęczony_ pisaniem programów w Ruscie po angielsku? Lubisz często mówić
 "cholera"? Chciałbyś spróbować czegoś innego, w egzotycznym i
 zabawnie brzmiącym języku? Chciałbyś dodać polski charakter do swoich
 programów?
 
-**rdza** (polskie słowo na _Rust_) jest tutaj, aby uratować Twój dzień, ponieważ pozwala Ci
+**Rdza** (polskie słowo na _Rust_) jest tutaj, aby uratować Twój dzień, ponieważ pozwala Ci
 pisać programy w Ruscie po polsku, używając polskich słów kluczowych, polskich nazw funkcji,
 polskich idiomów.
 
@@ -59,20 +59,17 @@ składnia. Bardzo dobrze!
 
 ## ale po co to robić?
 
-- [Francuzi](https://github.com/bnjbvr/rouille) i [Holendrzy](https://github.com/jeroenhd/roest) to potrafią, więc my też!
+[Francuzi](https://github.com/bnjbvr/rouille), [Holendrzy](https://github.com/jeroenhd/roest), [Niemcy](https://github.com/michidk/rost) mają, to my też!
+
+Poland can into Rust!
 
 ## Współpraca
 
 Przede wszystkim, _dziękuję bardzo_ za rozważenie udziału w tym żarcie,
-polski rząd będzie ci wdzięczny później! Nie krępuj się dodawać identyfikatory
-tu i tam, i otwórz pull-request do `główneygałęzi` (polskie słowo na
-`main branch`). Początkowe tłumaczenie zostało wykonane przez [Shemnei](https://github.com/Shemnei/) i [michidk](https://github.com/michidk/).
+polski rząd będzie ci wdzięczny później! Bazujące na niemieckiej wersji, [Shemnei](https://github.com/Shemnei/) i [michidk](https://github.com/michidk/). Vibe-translated przez Claude 3.7.
 
 ## Licencja
 
-[WTFPL](http://www.wtfpl.net/). Obrazy nie są objęte tą licencją, patrz poniżej.
+[WTFPL](http://www.wtfpl.net/).
 
-Atrybucje obrazów:
-
-- "Brezel und Filzhut zum Oktoberfest" autorstwa Tim Reckmann | a59.de na licencji CC BY 2.0
-- "Lederhose" na licencji CC BY-NC-SA 4.0
+Polski rak - obraz wygenerowany przez OpenAI.
