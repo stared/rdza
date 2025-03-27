@@ -1,88 +1,88 @@
-rost::rost! {
-    benutze std::sammlungen::Wörterbuch als Wöbu;
+rdza::rdza! {
+    użyj std::kolekcje::Słownik jako Słow;
 
-    eigenschaft SchlüsselWert {
-        fk schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette);
-        fk lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette>;
+    cecha KluczWartosc {
+        fn zapisz(&sam, klucz: Tekst, wartosc: Tekst);
+        fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst>;
     }
 
-    statisch änd WÖRTERBUCH: Möglichkeit<Wöbu<Zeichenkette, Zeichenkette>> = Nichts;
+    statyczny zm SLOWNIK: Opcja<Słow<Tekst, Tekst>> = Nic;
 
-    struktur Konkret;
+    struktura Konkretna;
 
-    umstz SchlüsselWert für Konkret {
+    impl KluczWartosc dla Konkretna {
 
-        fk schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette) {
-            lass wöbu = gefährlich {
-                WÖRTERBUCH.hole_oder_füge_ein_mit(Standard::standard)
+        fn zapisz(&sam, klucz: Tekst, wartosc: Tekst) {
+            niech słow = niebezpieczny {
+                SLOWNIK.pobierz_lub_wstaw_z(Domyślny::domyslny)
             };
-            wöbu.einfügen(schlsl, wert);
+            słow.wstaw(klucz, wartosc);
         }
 
-        fk lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette> {
-            wenn lass Etwas(wöbu) = gefährlich { WÖRTERBUCH.als_ref() } {
-                Gut(wöbu.hole(&schlsl))
-            } anderenfalls {
-                Fehler("Holt das Wörterbuch".hinein())
+        fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst> {
+            jeśli niech Coś(słow) = niebezpieczny { SLOWNIK.jako_ref() } {
+                Dobry(słow.pobierz(&klucz))
+            } inaczej {
+                Błąd("Pobierz słownik".do())
             }
         }
     }
 
-    öffentlich(kiste) fk vielleicht(i: u32) -> Möglichkeit<Ergebnis<u32, Zeichenkette>> {
-        wenn i % 2 == 1 {
-            wenn i == 42 {
-                Etwas(Fehler(Zeichenkette::von("Scheiße")))
-            } anderenfalls {
-                Etwas(Gut(33))
+    pub(skrzynia) fn możliwe(i: u32) -> Opcja<Wynik<u32, Tekst>> {
+        jeśli i % 2 == 1 {
+            jeśli i == 42 {
+                Coś(Błąd(Tekst::z("Cholera")))
+            } inaczej {
+                Coś(Dobry(33))
             }
-        } anderenfalls {
-            Nichts
+        } inaczej {
+            Nic
         }
     }
 
-    asynchron fk beispiel() {
+    asynchroniczny fn przykład() {
     }
 
-    asynchron fk beispiel2() {
-        beispiel().abwarten;
+    asynchroniczny fn przykład2() {
+        przykład().czekaj;
     }
 
-    fk einstieg() {
-        lass änd x = 31;
+    fn main() {
+        niech zm x = 31;
 
-        entspreche x {
+        dopasuj x {
             42 => {
-                ausgabe!("Wienerschnitzel")
+                wypisz!("Kotlet schabowy")
             }
-            _ => ausgabe!("Na geht doch")
+            _ => wypisz!("No i działa")
         }
 
-        für i in 0..10 {
-            lass val = schleife {
-                abbruch i;
+        dla i in 0..10 {
+            niech val = pętla {
+                przerwij i;
             };
 
-            während keins x < val {
+            podczas nie x < val {
                 x += 1;
             }
 
-            x = wenn lass Etwas(ergebnis) = vielleicht(i) {
-                ergebnis.entpacken()
-            } anderenfalls {
+            x = jeśli niech Coś(wynik) = możliwe(i) {
+                wynik.rozpakuj()
+            } inaczej {
                 12
             };
         }
 
-        benutze std::vgl::Ordnung;
-        let _mod7 = vec![0; 100].wieder()
-            .nehme(50)
-            .zuordnen(|nummer| nummer %  7)
-            .sammeln::<Vec<i32>>()
-            .zu_wieder()
-            .falte(0, |a, nummer| match nummer.vgl(&a) {
-                Ordnung::Mehr => a - nummer,
-                Ordnung::Weniger => a + nummer,
-                Ordnung::Gleich => a,
+        użyj std::por::Porównanie;
+        let _mod7 = vec![0; 100].iter()
+            .weź(50)
+            .mapuj(|numer| numer %  7)
+            .zbierz::<Vec<i32>>()
+            .do_iter()
+            .złóż(0, |a, numer| match numer.por(&a) {
+                Porównanie::Więcej => a - numer,
+                Porównanie::Mniej => a + numer,
+                Porównanie::Równy => a,
             });
     }
 }
