@@ -3,7 +3,7 @@
 <p align="center"><img src="polska_rdza.png" alt="Rust Polish Logo"></p>
 
 Czy nie jesteś _zmęczony_ pisaniem programów w Ruscie po angielsku? Lubisz często mówić
-"cholera"? Chciałbyś spróbować czegoś innego, w egzotycznym i
+"kurwa"? Chciałbyś spróbować czegoś innego, w egzotycznym i
 zabawnie brzmiącym języku? Chciałbyś dodać polski charakter do swoich
 programów?
 
@@ -21,29 +21,29 @@ Oto przykład tego, co można osiągnąć z Rdzą:
 
 ```rust
 rdza::rdza! {
-    użyj std::kolekcje::Słownik jako Słow;
+    użyj std::zbiory::Słownik;
 
-    cecha KluczWartosc {
-        fn zapisz(&sam, klucz: Tekst, wartosc: Tekst);
+    cecha KluczWartość {
+        fn zapisz(&sam, klucz: Tekst, wartość: Tekst);
         fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst>;
     }
 
-    statyczny zm SLOWNIK: Opcja<Słow<Tekst, Tekst>> = Nic;
+    statyczny zm SŁOWNIK: Opcja<Słownik<Tekst, Tekst>> = Nic;
 
     struktura Konkretna;
 
-    impl KluczWartosc dla Konkretna {
+    impl KluczWartość dla Konkretna {
 
-        fn zapisz(&sam, klucz: Tekst, wartosc: Tekst) {
-            niech słow = niebezpieczny {
-                SLOWNIK.pobierz_lub_wstaw_z(Domyślny::domyslny)
+        fn zapisz(&sam, klucz: Tekst, wartość: Tekst) {
+            niech słownik = niebezpieczny {
+                SŁOWNIK.pobierz_lub_wstaw_z(Domyślny::domyślny)
             };
-            słow.wstaw(klucz, wartosc);
+            słownik.wstaw(klucz, wartość);
         }
 
         fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst> {
-            jeśli niech Coś(słow) = niebezpieczny { SLOWNIK.jako_ref() } {
-                Dobry(słow.pobierz(&klucz))
+            jeśli niech Coś(słownik) = niebezpieczny { SŁOWNIK.jako_ref() } {
+                Dobry(słownik.pobierz(&klucz))
             } inaczej {
                 Błąd("Pobierz słownik".do())
             }
@@ -66,7 +66,7 @@ Poland can into Rust!
 ## Współpraca
 
 Przede wszystkim, dziękuję bardzo za rozważenie udziału w tym żarcie,
-polski rząd będzie ci wdzięczny później! Bazujące na niemieckiej wersji, [Shemnei](https://github.com/Shemnei/) i [michidk](https://github.com/michidk/). Vibe-translated przez [https://p.migdal.pl/](Piotr Migdał) przy użyciu Claude 3.7.
+polski rząd będzie ci wdzięczny później! Bazujące na niemieckiej wersji, [Shemnei](https://github.com/Shemnei/) i [michidk](https://github.com/michidk/). Vibe-translated przez [Piotr Migdał](https://p.migdal.pl/) przy użyciu Claude 3.7.
 
 ## Licencja
 

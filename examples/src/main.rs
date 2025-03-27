@@ -1,27 +1,27 @@
 rdza::rdza! {
-    użyj std::kolekcje::Słownik jako Słow;
+    użyj std::zbiory::Słownik;
 
-    cecha KluczWartosc {
-        fn zapisz(&sam, klucz: Tekst, wartosc: Tekst);
+    cecha KluczWartość {
+        fn zapisz(&sam, klucz: Tekst, wartość: Tekst);
         fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst>;
     }
 
-    statyczny zm SLOWNIK: Opcja<Słow<Tekst, Tekst>> = Nic;
+    statyczny zm SŁOWNIK: Opcja<Słownik<Tekst, Tekst>> = Nic;
 
     struktura Konkretna;
 
-    impl KluczWartosc dla Konkretna {
+    impl KluczWartość dla Konkretna {
 
-        fn zapisz(&sam, klucz: Tekst, wartosc: Tekst) {
-            niech słow = niebezpieczny {
-                SLOWNIK.pobierz_lub_wstaw_z(Domyślny::domyslny)
+        fn zapisz(&sam, klucz: Tekst, wartość: Tekst) {
+            niech słownik = niebezpieczny {
+                SŁOWNIK.pobierz_lub_wstaw_z(Domyślny::domyślny)
             };
-            słow.wstaw(klucz, wartosc);
+            słownik.wstaw(klucz, wartość);
         }
 
         fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst> {
-            jeśli niech Coś(słow) = niebezpieczny { SLOWNIK.jako_ref() } {
-                Dobry(słow.pobierz(&klucz))
+            jeśli niech Coś(słownik) = niebezpieczny { SŁOWNIK.jako_ref() } {
+                Dobry(słownik.pobierz(&klucz))
             } inaczej {
                 Błąd("Pobierz słownik".do())
             }
@@ -31,7 +31,7 @@ rdza::rdza! {
     pub(skrzynia) fn możliwe(i: u32) -> Opcja<Wynik<u32, Tekst>> {
         jeśli i % 2 == 1 {
             jeśli i == 42 {
-                Coś(Błąd(Tekst::z("Cholera")))
+                Coś(Błąd(Tekst::z("Kurwa")))
             } inaczej {
                 Coś(Dobry(33))
             }
