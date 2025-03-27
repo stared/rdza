@@ -1,77 +1,75 @@
-# rost
+# rdza
 
-<p align="center"><img src="logo.jpg" alt="Rust German Logo"></p>
+<p align="center"><img src="polska_rdza.png" alt="Rust Polish Logo"></p>
 
-Aren't you _müde_ from writing Rust programs in English? Do you like saying
-"scheiße" a lot? Would you like to try something different, in an exotic and
-funny-sounding language? Would you want to bring some German touch to your
-programs?
+Czy nie jesteś _zmęczony_ pisaniem programów w Ruscie po angielsku? Lubisz często mówić
+"kurwa"? Chciałbyś spróbować czegoś innego, w egzotycznym i
+zabawnie brzmiącym języku? Chciałbyś dodać polski charakter do swoich
+programów?
 
-**rost** (German for _Rust_) is here to save your day, as it allows you to
-write Rust programs in German, using German keywords, German function names,
-German idioms.
+**Rdza** (polskie słowo na _Rust_) jest tutaj, aby uratować Twój dzień, ponieważ pozwala Ci
+pisać programy w Ruscie po polsku, używając polskich słów kluczowych, polskich nazw funkcji,
+polskich idiomów.
 
-You don't feel at ease using only German words? Don't worry!
-German Rust is fully compatible with English-Rust, so you can mix both at your
-convenience.
+Nie czujesz się komfortowo używając tylko polskich słów? Nie martw się!
+Polski Rust jest w pełni kompatybilny z angielskim Rustem, więc możesz mieszać oba według
+własnego uznania.
 
-Here's an example of what can be achieved with Rost:
+Oto przykład tego, co można osiągnąć z Rdzą:
 
-## struct and impl (aka Konvention und Umsetzung)
+## struct and impl (czyli Struktura i Implementacja)
 
 ```rust
-rost::rost! {
-    benutze std::sammlungen::Wörterbuch als Wöbu;
+rdza::rdza! {
+    użyj std::zbiory::Słownik;
 
-    eigenschaft SchlüsselWert {
-        fk schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette);
-        fk lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette>;
+    cecha KluczWartość {
+        fn zapisz(&sam, klucz: Tekst, wartość: Tekst);
+        fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst>;
     }
 
-    statisch änd WÖRTERBUCH: Möglichkeit<Wöbu<Zeichenkette, Zeichenkette>> = Nichts;
+    statyczny zm SŁOWNIK: Opcja<Słownik<Tekst, Tekst>> = Nic;
 
-    struktur Konkret;
+    struktura Konkretna;
 
-    umstz SchlüsselWert für Konkret {
+    impl KluczWartość dla Konkretna {
 
-        fk schreibe(&selbst, schlsl: Zeichenkette, wert: Zeichenkette) {
-            lass wöbu = gefährlich {
-                WÖRTERBUCH.hole_oder_füge_ein_mit(Standard::standard)
+        fn zapisz(&sam, klucz: Tekst, wartość: Tekst) {
+            niech słownik = niebezpieczny {
+                SŁOWNIK.pobierz_lub_wstaw_z(Domyślny::domyślny)
             };
-            wöbu.einfügen(schlsl, wert);
+            słownik.wstaw(klucz, wartość);
         }
 
-        fk lese(&selbst, schlsl: Zeichenkette) -> Ergebnis<Möglichkeit<&Zeichenkette>, Zeichenkette> {
-            wenn lass Etwas(wöbu) = gefährlich { WÖRTERBUCH.als_ref() } {
-                Gut(wöbu.hole(&schlsl))
-            } anderenfalls {
-                Fehler("Holt das Wörterbuch".hinein())
+        fn czytaj(&sam, klucz: Tekst) -> Wynik<Opcja<&Tekst>, Tekst> {
+            jeśli niech Coś(słownik) = niebezpieczny { SŁOWNIK.jako_ref() } {
+                Dobry(słownik.pobierz(&klucz))
+            } inaczej {
+                Błąd("Pobierz słownik".do())
             }
         }
     }
 }
 ```
 
-## Other examples
+## Inne przykłady
 
-See the [examples](./examples/src/main.rs) to get a rough sense of the whole
-syntax. Gut so!
+Zobacz [przykłady](./examples/src/main.rs), aby zobaczyć jak działa cała
+składnia. Bardzo dobrze!
 
-## but why would you do das?
+## ale po co to robić?
 
-* the [French](https://github.com/bnjbvr/rouille) and [Dutch](https://github.com/jeroenhd/roest) can do it, so we can as well!
+[Francuzi](https://github.com/bnjbvr/rouille), [Holendrzy](https://github.com/jeroenhd/roest), [Niemcy](https://github.com/michidk/rost) mają, to my też!
 
-## Mitwirken
+Poland can into Rust!
 
-First of all, _vielen Dank_ for considering participating to this joke, the
-German government will thank you later! Feel free to throw in a few identifiers
-here and there, and open a pull-request against the `hauptzweig` (German for
-`main branch`). The initial translation was made by [Shemnei](https://github.com/Shemnei/) and [michidk](https://github.com/michidk/).
+## Współpraca
 
-## Die Lizenzbestimmungen
+Przede wszystkim, dziękuję bardzo za rozważenie udziału w tym żarcie,
+polski rząd będzie ci wdzięczny później! Bazujące na niemieckiej wersji, [Shemnei](https://github.com/Shemnei/) i [michidk](https://github.com/michidk/). Vibe-translated przez [Piotr Migdał](https://p.migdal.pl/) przy użyciu Claude 3.7.
 
-[WTFPL](http://www.wtfpl.net/). The images do not fall under this license, see below.
+## Licencja
 
-Image attributions:
-* "Brezel und Filzhut zum Oktoberfest" by Tim Reckmann | a59.de is licensed under CC BY 2.0
-* "Lederhose" is licensed under CC BY-NC-SA 4.0
+[WTFPL](http://www.wtfpl.net/).
+
+Polski rak - obraz wygenerowany przez OpenAI.
