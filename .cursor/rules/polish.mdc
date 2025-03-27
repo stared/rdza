@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Polish
+
+- It is Rust in Polish, Rdza
+- Translate German into Polish; make it work in Polish idiomatically
+- Don't change code otherwise
